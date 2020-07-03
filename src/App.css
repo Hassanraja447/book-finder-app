@@ -1,6 +1,13 @@
 /* color-primary:#393e46 */
 /* color-secondary:#00adb5 */
 /* color-tertiary:#eeeeee */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
 body {
   font-family: "Raleway", sans-serif;
@@ -9,7 +16,7 @@ body {
   color: #393e46;
 }
 .app-header {
-  padding: 150px 0;
+  padding: 80px 0;
   background-color: #00adb5;
   display: flex;
   flex-direction: column;
@@ -19,7 +26,7 @@ body {
 .big-heading {
   font-size: 48px;
   font-weight: 700;
-  color: #393e46;
+  color: #fff;
 }
 .search-input {
   width: 50%;
@@ -33,12 +40,37 @@ body {
   display: flex;
   flex-wrap: wrap;
   list-style: none;
+  width: 100%;
+  margin-top: 40px;
+  justify-content: center;
 }
 .bookItem {
   background-color: #eeeeee;
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  margin: 1.33%;
+  flex: 0 1 30%;
+  margin-bottom: 10px;
+}
+.bookImg {
+  width: 100%;
+  max-height: 400px;
+}
+.bookInfo {
   padding: 20px;
+}
+.bookInfo-row {
+  margin-bottom: 5px;
+}
+.bookInfo-label {
+  margin-bottom: 5px;
+  font-weight: 700;
 }
 .bookTitle {
   font-size: 16px;
 }
+
+/* @media (min-width: 768px) {
+  .bookItem {
+    flex-basis: 300px;
+  }
+} */

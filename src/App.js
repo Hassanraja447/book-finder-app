@@ -1,7 +1,5 @@
 import React from "react";
-import logo from "./logo.svg";
 import "./App.css";
-import { render } from "@testing-library/react";
 import axios from "axios";
 
 class App extends React.Component {
@@ -12,19 +10,39 @@ class App extends React.Component {
       books: [],
     };
   }
-  componentDidMount() {
+  fetchdata(searchTerm) {
     axios
-      .get(`https://www.googleapis.com/books/v1/volumes?q=javascript`)
+      .get(`https://www.googleapis.com/books/v1/volumes?q=${searchTerm}`)
       .then((res) => {
-        console.log(res.data.items);
         this.setState({ books: res.data.items });
       });
   }
+  componentDidMount() {
+    const { searchTerm } = this.state;
+    this.fetchdata(searchTerm);
+  }
+
   handleChangeValue = (e) => {
-    this.setState({ searchTerm: e.target.value }, () =>
-      console.log(this.state.searchTerm)
-    );
+    const searchTerm = e.target.value;
+    this.setState({ searchTerm });
+    this.fetchdata(searchTerm);
   };
+
+  addThumbnail(book) {
+    let src = book.volumeInfo.imageLinks;
+    if (typeof src === "undefined") {
+      return "https://via.placeholder.com/400";
+    } else {
+      return src.thumbnail;
+    }
+  }
+  truncateStr(str) {
+    console.log(str);
+    if (str !== undefined) {
+      return str.length > 150 ? str.substring(0, 150) + " ..." : str;
+    }
+    return "Description Not available";
+  }
 
   render() {
     return (
@@ -39,12 +57,31 @@ class App extends React.Component {
           ></input>
         </header>
         <ul className="bookList">
-          {this.state.books.map((book) => (
-            <li className="bookItem" key={book.id}>
-              <img src={book.volumeInfo.imageLinks.thumbnail}></img>
-              <h6 className="bookTitle"> {book.volumeInfo.title}</h6>
-            </li>
-          ))}
+          {this.state.books.length > 0 &&
+            this.state.books.map((book) => (
+              <li className="bookItem" key={book.id}>
+                <img className="bookImg" src={this.addThumbnail(book)}></img>
+                <div className="bookInfo">
+                  <div className="bookInfo-row">
+                    <label className="bookInfo-label">Title</label>
+                    <p className="bookTitle"> {book.volumeInfo.title}</p>
+                  </div>
+                  <div className="bookInfo-row">
+                    <label className="bookInfo-label">Description</label>
+                    <p className="bookTitle">
+                      {" "}
+                      {this.truncateStr(book.volumeInfo.description) ||
+                        "Description not available"}{" "}
+                    </p>
+                  </div>
+                  <div className="bookInfo-row">
+                    <p className="bookTitle">
+                      <a href={book.volumeInfo.infoLink}>Find More</a>
+                    </p>
+                  </div>
+                </div>
+              </li>
+            ))}
         </ul>
       </div>
     );
