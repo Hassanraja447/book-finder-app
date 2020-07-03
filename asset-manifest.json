@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/book-finder-app/static/css/main.ee080cdc.chunk.css",
-    "main.js": "/book-finder-app/static/js/main.78ffddb9.chunk.js",
-    "main.js.map": "/book-finder-app/static/js/main.78ffddb9.chunk.js.map",
+    "main.css": "/book-finder-app/static/css/main.145fbd13.chunk.css",
+    "main.js": "/book-finder-app/static/js/main.1ff20387.chunk.js",
+    "main.js.map": "/book-finder-app/static/js/main.1ff20387.chunk.js.map",
     "runtime-main.js": "/book-finder-app/static/js/runtime-main.a2791a58.js",
     "runtime-main.js.map": "/book-finder-app/static/js/runtime-main.a2791a58.js.map",
     "static/js/2.e0d67c37.chunk.js": "/book-finder-app/static/js/2.e0d67c37.chunk.js",
     "static/js/2.e0d67c37.chunk.js.map": "/book-finder-app/static/js/2.e0d67c37.chunk.js.map",
     "index.html": "/book-finder-app/index.html",
-    "precache-manifest.3e0308df6eb6e6a8c5c55787cfccd23e.js": "/book-finder-app/precache-manifest.3e0308df6eb6e6a8c5c55787cfccd23e.js",
+    "precache-manifest.4df184a98c94b35746bb26df6a5a095c.js": "/book-finder-app/precache-manifest.4df184a98c94b35746bb26df6a5a095c.js",
     "service-worker.js": "/book-finder-app/service-worker.js",
-    "static/css/main.ee080cdc.chunk.css.map": "/book-finder-app/static/css/main.ee080cdc.chunk.css.map",
+    "static/css/main.145fbd13.chunk.css.map": "/book-finder-app/static/css/main.145fbd13.chunk.css.map",
     "static/js/2.e0d67c37.chunk.js.LICENSE.txt": "/book-finder-app/static/js/2.e0d67c37.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
     "static/js/runtime-main.a2791a58.js",
     "static/js/2.e0d67c37.chunk.js",
-    "static/css/main.ee080cdc.chunk.css",
-    "static/js/main.78ffddb9.chunk.js"
+    "static/css/main.145fbd13.chunk.css",
+    "static/js/main.1ff20387.chunk.js"
   ]
 }
